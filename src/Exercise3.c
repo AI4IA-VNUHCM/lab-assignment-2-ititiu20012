@@ -21,12 +21,12 @@ void primefactors(int n)
 		{
 			while (n%i ==0)
 			{
-				printf("%d ",i);
+				printf("%d *",i);
 				n=n/i;
 			}
 		}
 		if (n>2)
-		printf("* %d ",n);
+		printf(" %d ",n);
 	}
 
 
