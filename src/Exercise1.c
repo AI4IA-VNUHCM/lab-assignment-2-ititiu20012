@@ -32,6 +32,6 @@ int main(int argc, char *argv[]) {
 		result = 15000 + ((n/0.25) * 2000);
 	}
 	
-	printf(" %d", result);
+	printf("%d", result);
 	return 0;
 }
