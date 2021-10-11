@@ -8,47 +8,54 @@ Ex:
 |____________________________________|
 */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-int main(int argc, char *argv[]) {
-	//testing variable, applying it to your algorithm for auto-evaluating
-	argc--;
-	int n = argc;
-	int test_array[n],i;
-	for(i=0; i<n;i++)
+int main (int argc, char *argv[])
+{
+    int len = argc;
+    int next, current;
+    char *next_s, *current_s, *temp;	
+    int half = (len - 1) / 2;
+
+	for (int i = 1; i < len; i++)
 	{
-		test_array[i] = atoi(argv[i+1]);
-	}
-	//Your codes here
-	int j,temp;
-	for(i=0;i<n-1;i++)
-	{
-		for(j=0;j<n/2;j++)
+		for(int j = 1; j < half; j++)
 		{
-			if (test_array[j]>test_array[j+1])
-			{
-				temp=test_array[j];
-				test_array[j]=test_array[j+1];
-				test_array[j+1]=temp;
-			}
+			current_s = argv[j];
+            next_s = argv[j + 1];
+            current = atoi(current_s);
+            next = atoi(next_s);
+
+	        if(current > next )
+	        {
+                temp = argv[j];
+	            argv[j] = next_s;
+	            argv[j+1] = temp;
+	        }
 		}
 
-		for(j=n/2;j<n-1;j++)
+		for (int j = half+1; j < len - 1; j++)
 		{
-			if(test_array[j]<test_array[j+1])
-			{
-				temp=test_array[j];
-				test_array[j]=test_array[j+1];
-				test_array[j+1]=temp;
-			}
+			current_s = argv[j];
+            next_s = argv[j + 1];
+            current = atoi(current_s);
+            next = atoi(next_s);
+
+	        if(current < next)
+	        {
+                temp = argv[j];
+	            argv[j] = next_s;
+	            argv[j+1] = temp;
+	        }
 		}
 	}
-	for(i=0;i<n;i++)
+	// printf("After sorting first half in ascending and second half in descending order:\n");
+	for(int i = 1; i < len; i++)
 	{
-		printf("%d ",test_array[i]);
+		 printf ("%s ", argv[i]);
 	}
-		return 0;
+
+    printf("\n");
+	return 0;
 }
-
