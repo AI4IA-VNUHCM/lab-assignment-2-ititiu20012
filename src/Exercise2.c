@@ -13,13 +13,22 @@ ______________________________________
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+int giaithua(int n)
+{
+	if (n==1)
+		return 1;
+	return n* giaithua(n-2);
+
+}
 
 int main(int argc, char *argv[]) {
 	//testing variable, applying it to your algorithm for auto-evaluating
 	int n = atoi(argv[1]);
 	int result;
 	//Your codes here
-	
-	printf("%d", result);
+	printf("%d", giaithua(n));
 	return 0;
-}
+	}
+
+
+
