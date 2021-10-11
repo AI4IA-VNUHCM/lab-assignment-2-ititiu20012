@@ -15,7 +15,14 @@ int main(int argc, char *argv[]) {
 	int testcase = atoi(argv[1]);
 	
 	//Your codes here
-	
+	int foo1(int testcase)
+	{
+		while ( testcase % 2==0)
+		{
+			printf("%d *", 2);
+			testcase = testcase/2;
+		}
+	}
 	
 	return 0;
 }

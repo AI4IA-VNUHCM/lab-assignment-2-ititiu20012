@@ -17,50 +17,38 @@ int main(int argc, char *argv[]) {
 	argc--;
 	int n = argc;
 	int test_array[n],i;
-	for(i=0; i<n;i++){
+	for(i=0; i<n;i++)
+	{
 		test_array[i] = atoi(argv[i+1]);
 	}
 	//Your codes here
-	int *a,n,i,j,temp;
-	printf("Enter size of array:");
-	scanf("%d",&n);
-
-	a=malloc(sizeof(int)*n);
-
-	printf("Enter %d Elements:",n);
-	for(i=0;i<n;i++)
-	{
-		scanf("%d",&a[i]);
-	}
-
+	int j,temp;
 	for(i=0;i<n-1;i++)
 	{
 		for(j=0;j<n/2;j++)
 		{
-			if(a[j]>a[j+1])
+			if (test_array[j]>test_array[j+1])
 			{
-				temp=a[j];
-				a[j]=a[j+1];
-				a[j+1]=temp;
+				temp=test_array[j];
+				test_array[j]=test_array[j+1];
+				test_array[j+1]=temp;
 			}
 		}
 
 		for(j=n/2;j<n-1;j++)
 		{
-			if(a[j]<a[j+1])
+			if(test_array[j]<test_array[j+1])
 			{
-				temp=a[j];
-				a[j]=a[j+1];
-				a[j+1]=temp;
+				temp=test_array[j];
+				test_array[j]=test_array[j+1];
+				test_array[j+1]=temp;
 			}
 		}
 	}
-	printf("After sorting first half in ascending and second half in descending order:\n");
 	for(i=0;i<n;i++)
 	{
-		printf("%d ",a[i]);
+		printf("%d ",test_array[i]);
 	}
-	
-	return 0;
+		return 0;
 }
 
