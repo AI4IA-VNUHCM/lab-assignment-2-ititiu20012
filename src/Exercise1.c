@@ -29,9 +29,9 @@ int main(int argc, char *argv[]) {
 	}
 	else if (distance >2) {
 		n=distance -2;
-		result = 15000 + n/0.25 * 2000;
+		result = 15000 + ((n/0.25) * 2000);
 	}
 	
-	printf("%d", result);
+	printf(" %d", result);
 	return 0;
 }
